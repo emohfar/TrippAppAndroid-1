@@ -44,6 +44,7 @@ public class LoginActivity extends AppCompatActivity {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                startActivity(new Intent(LoginActivity.this,MainActivity.class));
                 new LoginGrpcTask(LoginActivity.this).execute(
                         username_email.getText().toString(),
                         password.getText().toString());
