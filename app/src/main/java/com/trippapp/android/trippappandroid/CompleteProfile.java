@@ -5,13 +5,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 public class CompleteProfile extends AppCompatActivity {
 
-    ImageView picProfile;
     TextView username;
+    ImageButton picProfile;
 
     private void initView() {
         picProfile = findViewById(R.id.iv_img_complete_profile);
