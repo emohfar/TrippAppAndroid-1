@@ -25,7 +25,7 @@ import io.grpc.trippapp.Account.SignupResp;
 public class SignUpActivity extends AppCompatActivity {
 
     EditText firstName, lastName, username, email, password;
-    Button signUp;
+    Button signUpBtn;
     TextView loginText;
 
     private void initView() {
@@ -34,7 +34,7 @@ public class SignUpActivity extends AppCompatActivity {
         username = findViewById(R.id.et_username_signup);
         email = findViewById(R.id.et_email_signup);
         password = findViewById(R.id.et_password_signup);
-        signUp = findViewById(R.id.bt_signup_signup);
+        signUpBtn = findViewById(R.id.bt_signup_signup);
         loginText = findViewById(R.id.tv_login_signup);
     }
 
@@ -51,7 +51,7 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
 
-        signUp.setOnClickListener(new View.OnClickListener() {
+        signUpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 new SignUpGrpcTask(SignUpActivity.this).execute(
@@ -61,6 +61,7 @@ public class SignUpActivity extends AppCompatActivity {
                         password.getText().toString(),
                         email.getText().toString()
                 );
+                startActivity(new Intent(SignUpActivity.this,CompleteProfile.class));
 
             }
         });
